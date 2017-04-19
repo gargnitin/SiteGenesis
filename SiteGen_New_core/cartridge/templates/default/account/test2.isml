@@ -1,0 +1,14 @@
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+<isinclude template="util/modules"/>
+this is Confirm button click
+${pdict.var1}
+
+name is 
+
+${pdict.add.firstName}
+${pdict.add.lastName}
+${pdict.add.state1}
+${pdict.testData}
+
+
+<isinclude url="${URLUtils.url('Test-IncludeHeader', 'pid', '11111')}"/>

@@ -1,0 +1,14 @@
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+<isinclude template="util/modules"/>
+
+<!-- 
+this is Confirm1 button click
+ ${pdict.add.firstName}
+${pdict.add.lastName}
+${pdict.add.state1}
+ -->
+ 
+this is include ${pdict.pid}
+
+
+ 

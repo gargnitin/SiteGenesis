@@ -1,0 +1,39 @@
+/**
+ * AddAddressToAddressBook.ds
+ *
+ * This script attempts to add the given order address to the 
+ * address book of the current customer profile.
+ * The address attribute "city" is used to generate the address 
+ * ID within the address book. 
+ *
+ * @input productLineItem : dw.order.ProductLineItem
+ */
+
+importPackage( dw.customer );
+importPackage( dw.order );
+importPackage( dw.system );
+importPackage( dw.web ); 
+
+importScript( "account/Utils.ds" );
+
+function execute( pdict : PipelineDictionary ) : Number
+{
+	var productLineItem : ProductLineItem = pdict.productLineItem;
+	var incementalCalculatedPrice : Number = 20;
+	var adjustment = productLineItem.getPriceAdjustmentByPromotionID(productLineItem.getUUID()+"_Club_PriceAdjustment");
+
+	if ( adjustment != null )
+	{
+		productLineItem.removePriceAdjustment( adjustment );
+	}
+	
+	if(incementalCalculatedPrice > 0)
+	{
+		var priceAdjustment : PriceAdjustment = productLineItem.createPriceAdjustment(productLineItem.getUUID()+"Club_PriceAdjustment");
+		priceAdjustment.setLineItemText("Club price adjustment");
+		priceAdjustment.setPriceValue(incementalCalculatedPrice);
+		priceAdjustment.setTaxRate(0);
+		priceAdjustment.updateTax(0);
+	}
+    return PIPELET_NEXT;
+}

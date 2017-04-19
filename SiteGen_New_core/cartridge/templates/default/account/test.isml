@@ -1,0 +1,25 @@
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+<isinclude template="util/modules"/>
+<form action="${URLUtils.httpsContinue()}" method="post" class="form-horizontal" id="test">
+	<isinputfield formfield=${pdict.CurrentForms.test.testcustomer.firstname} type="input">
+	<isinputfield formfield=${pdict.CurrentForms.test.testcustomer.lastname} type="input">
+	Q parameter
+	<input name="q" value="" type="input">
+	<isinputfield formfield=${pdict.CurrentForms.test.testcustomer.state1} type="select">
+	<br/>
+
+<button type="submit" value="click" name="${pdict.CurrentForms.test.testcustomer.confirm.htmlName}">
+
+Confirm
+</button>	
+
+<button type="submit" value="click" name="${pdict.CurrentForms.test.testcustomer.confirm1.htmlName}">
+
+Confirm1
+</button>	
+
+
+
+<input type="hidden" name="${pdict.CurrentForms.test.secureKeyHtmlName}" value="${pdict.CurrentForms.test.secureKeyValue}"/>
+
+</form>

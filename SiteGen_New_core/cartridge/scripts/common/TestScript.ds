@@ -1,0 +1,18 @@
+/**
+* To find out the device type.
+* To define input and output parameters, create entries of the form:
+*
+* @output address : Object
+*
+*/
+importPackage( dw.system );
+
+function execute( args : PipelineDictionary ) : Number
+{
+	var address : Object = new Object();
+	address.firstName = "Nitin Garg";
+	address.lastName = "Garg";
+
+	args.address = address;
+    return PIPELET_NEXT;
+}
